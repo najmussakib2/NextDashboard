@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import type { MenuProps } from "antd";
-
+import { BarChartOutlined, BoxPlotOutlined, HomeFilled, HomeOutlined, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 export default function AppSideMenu() {
   const pathname = usePathname();
   const [selectedKey, setSelectedKey] = useState<string[]>([""]);
@@ -26,16 +26,19 @@ export default function AppSideMenu() {
   }, [pathname]);
 
   const menuItems: MenuProps['items'] = [
-    { label: <Link href="/">Home</Link>, key: "1" },
-    { label: <Link href="/dashboard">Dashboard</Link>, key: "2" },
+    { label: <Link className="font-semibold" href="/">Home</Link>,icon: <HomeOutlined />, key: "1" },
+    { label: <Link className="font-semibold" href="/dashboard">Dashboard</Link>,icon: <HomeFilled />, key: "2" },
     { type: "divider" as const },
-    { label: <Link href="/dashboard/Kanban">Kanban</Link>, key: "3" },
-    { label: <Link href="/dashboard/NFT-Marketplace">NFT Marketplace</Link>, key: "4" },
-    { label: <Link href="/dashboard/Profile">Profile</Link>, key: "5" },
-    { label: <Link href="/dashboard/Tables">Tables</Link>, key: "6" },
+    { label: <Link className="font-semibold" href="/dashboard/NFT-Marketplace">NFT Marketplace</Link>,icon:<ShoppingCartOutlined />, key: "4" },
+    { label: <Link className="font-semibold" href="/dashboard/Tables">Tables</Link>,icon:<BarChartOutlined />, key: "6" },
+    { label: <Link className="font-semibold" href="/dashboard/Kanban">Kanban</Link>,icon:<BoxPlotOutlined />, key: "3" },
+    { label: <Link className="font-semibold" href="/dashboard/Profile">Profile</Link>,icon:<UserOutlined />, key: "5" },
+
   ];
 
   return (
-    <Menu mode="inline" items={menuItems} selectedKeys={selectedKey} />
+    <Menu mode="inline" items={menuItems} 
+    selectedKeys={selectedKey}
+    />
   );
 }
