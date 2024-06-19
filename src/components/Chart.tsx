@@ -66,7 +66,7 @@ const ChartCompo = () => {
 
     const generateNewData = () => {
         // Example: Generate random data points
-        const newData = Array.from({ length: 6 }, () => Math.floor(Math.random() * 0));
+        const newData = Array.from({ length: 6 }, () => Math.floor(Math.random() * 100));
         return newData;
     };
 

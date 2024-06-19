@@ -1,3 +1,4 @@
+import ApexChart from '@/components/ApexChart';
 import ChartCompo from '@/components/Chart';
 import ToggleButton from '@/components/ToggleButton';
 import { BellOutlined, CalendarOutlined, CheckCircleFilled, InfoCircleOutlined, SearchOutlined } from '@ant-design/icons';
@@ -66,6 +67,7 @@ const DashboardPage = () => {
                         </div>
                         <div>
                             <ChartCompo />
+                            <ApexChart/>
                         </div>
                     </div>
                 </div>

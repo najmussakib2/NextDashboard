@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body id="app" className={inter.className}>
         <ToggleTheme
           attribute="class"
           defaultTheme=""
