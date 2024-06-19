@@ -2,12 +2,14 @@ import ApexColumnChart from '@/components/Charts/ApexColumnChart';
 import ApexLineChart from '@/components/Charts/ApexLineChart';
 import ToggleButton from '@/components/ToggleButton';
 import { BellOutlined, CalendarOutlined, CheckCircleFilled, InfoCircleOutlined, SearchOutlined } from '@ant-design/icons';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Checkbox } from 'antd';
 import { BarChart2, CircleCheckBig, Files } from 'lucide-react';
 import Image from 'next/image';
 
 
 const DashboardPage = () => {
+
+
 
     return (
         <div className=''>
@@ -65,24 +67,68 @@ const DashboardPage = () => {
                             <p className='text-gray-400 font-semibold mb-5'>Total Spent <span className='text-green-400 ml-3'>+2.45%</span></p>
                             <p className='text-[16px] font-semibold text-[#05CD99]'><CheckCircleFilled /> On track</p>
                         </div>
-                        <div  className='w-[80%]'>
+                        <div className='w-[80%]'>
                             <ApexLineChart />
                         </div>
                     </div>
                 </div>
                 <div className='bg-white rounded-3xl p-3'>
-                    <div>
-                        <div className='rounded-3xl flex justify-between'>
-                            <h1 className='text-2xl font-bold'>Weekly Revenue</h1>
-                            <div className='font-bold text-[#4318FF] p-2 text-2xl rounded-2xl bg-[#F4F7FE]'>
-                                <BarChart2 />
-                            </div>
+                    <div className='rounded-3xl flex justify-between'>
+                        <h1 className='text-2xl font-bold'>Weekly Revenue</h1>
+                        <div className='font-bold text-[#4318FF] p-2 text-2xl rounded-2xl bg-[#F4F7FE]'>
+                            <BarChart2 />
                         </div>
-                        <div>
-                            <ApexColumnChart/>
+                    </div>
+                    <div>
+                        <ApexColumnChart />
+                    </div>
+                </div>
+            </section>
+            <section className='grid grid-cols-4 mt-5 gap-5'>
+                <div className='bg-white rounded-3xl p-3 col-span-2'>
+                    <div className='rounded-3xl flex justify-between'>
+                        <h1 className='text-2xl ml-10 font-bold'>Check Table</h1>
+                        <p className='font-bold text-[#4318FF] px-2 pt-0 pb-4 text-3xl rounded-2xl bg-[#F4F7FE]'>...</p>
+                    </div>
+                    <div>
+                        <div className='mx-10 flex gap-40 text-base text-[#2B3674] mt-6 font-bold mb-5'>
+                            <div className='flex flex-col gap-6'>
+                                <p className=' text-gray-400'>NAME</p>
+                                <p><Checkbox /> Horizon UI PRO</p>
+                                <p>Horizon UI Free</p>
+                                <p>Weekly Update</p>
+                                <p>Venus 3D Asset</p>
+                                <p>Marketplace</p>
+                            </div>
+                            <div className='flex flex-col gap-6'>
+                            <p className='font-semibold text-gray-400'>PROGRESS</p>
+                                <p>17.5%</p>
+                                <p>10.8%</p>
+                                <p>21.3%</p>
+                                <p>31.5%</p>
+                                <p>12.2%</p>
+                            </div>
+                            <div className='flex flex-col gap-6'>
+                            <p className='font-semibold text-gray-400'>QUANTITY</p>
+                                <p>2.458</p>
+                                <p>1.485</p>
+                                <p>1.024</p>
+                                <p>858</p>
+                                <p>258</p>
+                            </div>
+                            <div className='flex flex-col gap-6'>
+                            <p className='font-semibold text-gray-400'>DATE</p>
+                                <p>24.Jan.2021</p>
+                                <p>12.Jun.2021</p>
+                                <p>5.Jan.2021</p>
+                                <p>7.Mar.2021</p>
+                                <p>17.Dec.2021</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div className='bg-white rounded-3xl p-3'>hi</div>
+                <div className='bg-white rounded-3xl p-3'>hi</div>
             </section>
         </div>
     );

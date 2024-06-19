@@ -36,7 +36,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
                     position: "fixed",
                     top: 0,
                     left: 0,
-                    borderRight: "1px solid #f1f1f1",
+                    borderRight: "1px solid #f4f7fe",
                     height: "100vh",
                   }}
                 >
@@ -47,7 +47,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
                 </Sider>
                 <Layout style={{ marginLeft: "200px" }}>
                   <Content
-                    style={{ padding: "16px",  minHeight: "calc(100vh - 64px)" }}
+                    style={{ padding: "16px",  minHeight: "100vh", backgroundColor: "#f4f7fe" }}
                   >
                     {" "}
                     {children}

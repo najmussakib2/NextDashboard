@@ -12,7 +12,7 @@ export default function DashboardLayout({
 }>) {
   return (
     <div className="min-h-screen">
-        <div className=" bg-base-200 rounded-box">{children}</div>
+        <div className=" bg-[#f4f7fe] rounded-box">{children}</div>
     </div>
   );
 }
