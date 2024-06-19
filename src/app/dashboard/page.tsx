@@ -1,4 +1,5 @@
-import ChartCompo from '@/components/Chart';
+import ApexColumnChart from '@/components/Charts/ApexColumnChart';
+import ApexLineChart from '@/components/Charts/ApexLineChart';
 import ToggleButton from '@/components/ToggleButton';
 import { BellOutlined, CalendarOutlined, CheckCircleFilled, InfoCircleOutlined, SearchOutlined } from '@ant-design/icons';
 import { Breadcrumb } from 'antd';
@@ -51,25 +52,37 @@ const DashboardPage = () => {
 
             </section>
             <section className='grid grid-cols-2 gap-5 '>
-                <div className='bg-white rounded-3xl  p-3'>
+                <div className='bg-white rounded-3xl p-3'>
                     <div className='rounded-3xl flex justify-between'>
                         <h1 className='bg-gray-200 p-2 rounded-md'><CalendarOutlined /> This Mounth</h1>
                         <div className='font-bold text-[#4318FF] p-2 text-2xl rounded-2xl bg-[#F4F7FE]'>
                             <BarChart2 />
                         </div>
                     </div>
-                    <div className='flex items-center justify-between'>
-                        <div className='mt-8'>
+                    <div className='flex gap-5'>
+                        <div className='w-[20%] mt-10'>
                             <h1 className='text-3xl font-bold'>$37.5K</h1>
-                            <p className='text-gray-400 font-semibold mb-5'>Total Spent <span className='text-green-400'>+2.45%</span></p>
+                            <p className='text-gray-400 font-semibold mb-5'>Total Spent <span className='text-green-400 ml-3'>+2.45%</span></p>
                             <p className='text-[16px] font-semibold text-[#05CD99]'><CheckCircleFilled /> On track</p>
                         </div>
-                        <div>
-                            <ChartCompo />
+                        <div  className='w-[80%]'>
+                            <ApexLineChart />
                         </div>
                     </div>
                 </div>
-                <div className='bg-white rounded-3xl'>hekko</div>
+                <div className='bg-white rounded-3xl p-3'>
+                    <div>
+                        <div className='rounded-3xl flex justify-between'>
+                            <h1 className='text-2xl font-bold'>Weekly Revenue</h1>
+                            <div className='font-bold text-[#4318FF] p-2 text-2xl rounded-2xl bg-[#F4F7FE]'>
+                                <BarChart2 />
+                            </div>
+                        </div>
+                        <div>
+                            <ApexColumnChart/>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     );
