@@ -8,17 +8,11 @@ interface Series {
     data: number[];
 }
 
-const ApexColumnChart: React.FC = () => {
+const ApexColumnChart2: React.FC = () => {
     const [series] = useState<Series[]>([
         {
             name: 'A',
-            data: [44, 55, 41, 67, 22, 43, 21, 49]
-          }, {
-            name: 'B',
-            data: [13, 23, 20, 8, 13, 27, 33, 12]
-          }, {
-            name: 'C',
-            data: [11, 17, 15, 15, 21, 14, 15, 13]
+            data: [44, 55, 41, 67, 22, 43, 21]
           }
     ]);
 
@@ -41,7 +35,7 @@ const ApexColumnChart: React.FC = () => {
                 columnWidth: '20%',
             }
         },
-        colors : ['#775ffc', '#84d9fd', '#e6edf9'],
+        colors : ['#4318FF', '#4318FF'],
         dataLabels: {
             enabled: false
         },
@@ -68,6 +62,18 @@ const ApexColumnChart: React.FC = () => {
             },
             show: false,
         },
+        fill: {
+            type: 'gradient',
+            gradient: {
+              type: "vertical",
+              shadeIntensity: 0.25,
+              gradientToColors: undefined,
+              inverseColors: true,
+              opacityFrom: 1,
+              opacityTo: 0.65,
+              stops: [0, 50, 100] 
+            },
+          }
     });
 
     return (
@@ -80,4 +86,4 @@ const ApexColumnChart: React.FC = () => {
     );
 };
 
-export default ApexColumnChart;
+export default ApexColumnChart2;

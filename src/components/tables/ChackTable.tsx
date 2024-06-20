@@ -1,97 +1,46 @@
-"use client"
-import React, { useState } from 'react';
-import { Divider, Radio, Table } from 'antd';
-import type { TableColumnsType } from 'antd';
-
-interface DataType {
-  key: React.Key;
-  name: string;
-  age: number;
-  address: string;
-}
-
-const columns: TableColumnsType<DataType> = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    render: (text: string) => <a>{text}</a>,
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-  },
-];
-
-const data: DataType[] = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Disabled User',
-    age: 99,
-    address: 'Sydney No. 1 Lake Park',
-  },
-];
-
-// rowSelection object indicates the need for row selection
-const rowSelection = {
-  onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
-    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-  },
-  getCheckboxProps: (record: DataType) => ({
-    disabled: record.name === 'Disabled User', // Column configuration not to be checked
-    name: record.name,
-  }),
-};
-
-const ChackTable: React.FC = () => {
-  const [selectionType, setSelectionType] = useState<'checkbox' | 'radio'>('checkbox');
-
+import React from 'react';
+import { Checkbox } from '@/components/ui/ChackBox';
+const ChackTable = () => {
   return (
     <div>
-      <Radio.Group
-        onChange={({ target: { value } }) => {
-          setSelectionType(value);
-        }}
-        value={selectionType}
-      >
-        <Radio value="checkbox">Checkbox</Radio>
-        <Radio value="radio">radio</Radio>
-      </Radio.Group>
-
-      <Divider />
-
-      <Table
-        rowSelection={{
-          type: selectionType,
-          ...rowSelection,
-        }}
-        style={{
-            border: 'none'
-        }}
-        columns={columns}
-        dataSource={data}
-      />
+      <div className='mx-10 flex flex-col gap-10 text-base text-[#2B3674] mt-6 font-bold mb-5'>
+        <div className='flex gap-48'>
+          <p className=' text-gray-400'>NAME</p>
+          <p className='font-semibold text-gray-400'>PROGRESS</p>
+          <p className='font-semibold text-gray-400'>QUANTITY</p>
+          <p className='font-semibold text-gray-400'>DATE</p>
+        </div>
+        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <div className='flex items-center gap-2'><Checkbox /> Horizon UI PRO</div>
+          <p className='mx-20'>17.5%</p>
+          <p className='mx-32'>2.458</p>
+          <p className='ml-10'>24.Jan.2021</p>
+        </div>
+        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <div className='flex items-center gap-2'><Checkbox /> Horizon UI Free</div>
+          <p className='mx-20'>10.8%</p>
+          <p className='mx-32'>1.485</p>
+          <p className='ml-10'>12.Jun.2021</p>
+        </div>
+        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <div className='flex items-center gap-2'><Checkbox /> Weekly Update</div>
+          <p className='mx-20'>21.3%</p>
+          <p className='mx-32'>1.024</p>
+          <p className='ml-12'>5.Jan.2021</p>
+        </div>
+        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <div className='flex items-center gap-2'><Checkbox /> Venus 3D Asset</div>
+          <p className='mx-20'>31.5%</p>
+          <p className='mx-32 pl-2'>858</p>
+          <p className='ml-14'>7.Mar.2021</p>
+        </div>
+        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <div className='flex items-center gap-2'><Checkbox /> Marketplace</div>
+          <p className='mx-24'>12.2%</p>
+          <p className='mx-32'>258</p>
+          <p className='ml-12'>17.Dec.2021</p>
+        </div>
+      </div>
     </div>
   );
 };

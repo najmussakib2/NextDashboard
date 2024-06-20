@@ -8,6 +8,7 @@ import { Content } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import AppSideMenu from "@/components/shared/AppSideMenu";
 import ToggleTheme from "@/components/ToggleTheme";
+import UpgradeBox from "@/components/ui/UpgradeBox";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap', });
 
@@ -31,7 +32,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
               {/* <AppHeader /> */}
               <Layout>
                 <Sider
-                theme="light"
+                  theme="light"
                   style={{
                     position: "fixed",
                     top: 0,
@@ -44,10 +45,15 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
                     <h1 className="text-xl"><span className="font-bold ">DREAM</span> PARK</h1>
                   </div>
                   <AppSideMenu />
+                  <div className="h-full w-full flex items-center justify-center ">
+                    <div className="w-full">
+                      <UpgradeBox />
+                    </div>
+                  </div>
                 </Sider>
                 <Layout style={{ marginLeft: "200px" }}>
                   <Content
-                    style={{ padding: "16px",  minHeight: "100vh", backgroundColor: "#f4f7fe" }}
+                    style={{ padding: "16px", minHeight: "100vh", backgroundColor: "#f4f7fe" }}
                   >
                     {" "}
                     {children}
