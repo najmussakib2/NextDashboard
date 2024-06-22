@@ -1,6 +1,7 @@
 import ApexColumnChart from '@/components/Charts/ApexColumnChart';
 import ApexColumnChart2 from '@/components/Charts/ApexColumnChart2';
 import ApexLineChart from '@/components/Charts/ApexLineChart';
+import ApexPieChart from '@/components/Charts/ApexPieChart';
 import ToggleButton from '@/components/ToggleButton';
 import ChackTable from '@/components/tables/ChackTable';
 
@@ -109,7 +110,9 @@ const DashboardPage = () => {
                         <ApexColumnChart2/>
                     </div>
                 </div>
-                <div className='bg-white rounded-3xl p-3'>hi</div>
+                <div className='bg-white rounded-3xl p-3'>
+                    <ApexPieChart/>
+                </div>
             </section>
         </div>
     );
