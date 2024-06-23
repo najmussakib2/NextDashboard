@@ -3,44 +3,48 @@ import { Checkbox } from '@/components/ui/ChackBox';
 const ChackTable = () => {
   return (
     <div>
-      <div className='mx-10 flex flex-col gap-10 text-base text-[#2B3674] mt-6 font-bold mb-5'>
-        <div className='flex gap-48'>
-          <p className=' text-gray-400'>NAME</p>
-          <p className='font-semibold text-gray-400'>PROGRESS</p>
-          <p className='font-semibold text-gray-400'>QUANTITY</p>
-          <p className='font-semibold text-gray-400'>DATE</p>
-        </div>
-        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
-          <div className='flex items-center gap-2'><Checkbox /> Horizon UI PRO</div>
-          <p className='mx-20'>17.5%</p>
-          <p className='mx-32'>2.458</p>
-          <p className='ml-10'>24.Jan.2021</p>
-        </div>
-        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
-          <div className='flex items-center gap-2'><Checkbox /> Horizon UI Free</div>
-          <p className='mx-20'>10.8%</p>
-          <p className='mx-32'>1.485</p>
-          <p className='ml-10'>12.Jun.2021</p>
-        </div>
-        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
-          <div className='flex items-center gap-2'><Checkbox /> Weekly Update</div>
-          <p className='mx-20'>21.3%</p>
-          <p className='mx-32'>1.024</p>
-          <p className='ml-12'>5.Jan.2021</p>
-        </div>
-        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
-          <div className='flex items-center gap-2'><Checkbox /> Venus 3D Asset</div>
-          <p className='mx-20'>31.5%</p>
-          <p className='mx-32 pl-2'>858</p>
-          <p className='ml-14'>7.Mar.2021</p>
-        </div>
-        <div className='flex gap-6 hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
-          <div className='flex items-center gap-2'><Checkbox /> Marketplace</div>
-          <p className='mx-24'>12.2%</p>
-          <p className='mx-32'>258</p>
-          <p className='ml-12'>17.Dec.2021</p>
-        </div>
-      </div>
+      <table className='mx-10 flex flex-col gap-10 text-base text-[#2B3674] mt-6 font-bold mb-5'>
+        <thead>
+          <tr className='flex justify-center'>
+          <th className=' text-gray-400 w-[25%]'>NAME</th>
+          <th className='font-semibold text-gray-400 w-[25%]'>PROGRESS</th>
+          <th className='font-semibold text-gray-400 w-[25%]'>QUANTITY</th>
+          <th className='font-semibold text-gray-400 w-[25%]'>DATE</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr className='flex justify-center text-center hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <td className='flex items-center gap-2 w-[25%]'><Checkbox /> Horizon UI PRO</td>
+          <td className=' w-[25%]'>17.5%</td>
+          <td className=' w-[25%]'>2.458</td>
+          <td className=' w-[25%]'>24.Jan.2021</td>
+        </tr>
+        <tr className='flex justify-center text-center hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <td className='flex items-center gap-2 w-[25%]'><Checkbox /> Horizon UI Free</td>
+          <td className='w-[25%]'>10.8%</td>
+          <td className='w-[25%]'>1.485</td>
+          <td className='w-[25%]'>12.Jun.2021</td>
+        </tr>
+        <tr className='flex justify-center text-center hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <td className='flex items-center gap-2 w-[25%]'><Checkbox /> Weekly Update</td>
+          <td className=' w-[25%]'>21.3%</td>
+          <td className=' w-[25%]'>1.024</td>
+          <td className=' w-[25%]'>5.Jan.2021</td>
+        </tr>
+        <tr className='flex justify-center text-center hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <td className='flex items-center gap-2 w-[25%]'><Checkbox /> Venus 3D Asset</td>
+          <td className=' w-[25%]'>31.5%</td>
+          <td className=' w-[25%]'>858</td>
+          <td className=' w-[25%]'>7.Mar.2021</td>
+        </tr>
+        <tr className='flex justify-center text-center hover:shadow-md hover:bg-slate-200 rounded-md p-2 cursor-pointer'>
+          <td className='flex items-center gap-2 w-[25%]'><Checkbox />Marketplace</td>
+          <td className=' w-[25%]'>12.2%</td>
+          <td className=' w-[25%]'>258</td>
+          <td className=' w-[25%]'>17.Dec.2021</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

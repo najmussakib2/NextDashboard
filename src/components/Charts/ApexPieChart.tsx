@@ -1,56 +1,51 @@
 "use client"
+
 import React from "react";
-import ReactApexChart from "react-apexcharts";
+import Chart from "react-apexcharts";
 
-interface ApexPieChartProps {}
+interface DataItem {
+  name: string;
+  quantity: number;
+}
 
-interface ApexPieChartState {
-    series: number[];
-    options: ApexCharts.ApexOptions;
-  }
+const ApexPieChart: React.FC = () => {
+  const data: DataItem[] = [
+    {
+      name: "",
+      quantity: 30,
+    },
+    {
+      name: "",
+      quantity: 8,
 
-class ApexPieChart extends React.Component<ApexPieChartProps, ApexPieChartState> {
-    constructor(props: ApexPieChartProps) {
-      super(props);
+    },
+    {
+      name: "",
+      quantity: 10,
+    },
+  ];
 
-      this.state = {
-      
-        series: [44, 55, 13, 43, 22],
-        options: {
-          chart: {
-            width: 380,
-            type: 'pie',
-          },
-          labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-          responsive: [{
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200
-              },
-              legend: {
-                position: 'bottom'
-              }
-            }
-          }]
+  let names: string[] = [];
+  let quantities: number[] = [];
+  data.forEach(function (n: DataItem) {
+    names.push(n.name);
+    quantities.push(n.quantity);
+  });
+
+  return (
+    <Chart
+      type="pie"
+      series={quantities}
+      options={{
+        labels: names,
+        legend: {
+          show: false,
+          position: "bottom"
         },
-      
-      
-      };
-    }
-
-  
-
-    render() {
-      return (
-        <div>
-          <div id="chart">
-            <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={380} />
-          </div>
-          <div id="html-dist"></div>
-        </div>
-      );
-    }
-  }
+        colors: [ "#826AF9","#6ad2ff","#eff4fb"]
+      }}
+    />
+  );
+}
 
 export default ApexPieChart;
