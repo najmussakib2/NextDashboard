@@ -5,6 +5,7 @@ import ApexPieChart from "@/components/Charts/ApexPieChart";
 import ToggleButton from "@/components/ToggleButton";
 import ChackTable from "@/components/tables/ChackTable";
 import ProgressTable from "@/components/tables/ProgressTable";
+import SelectionTable from "@/components/tables/SelectionTable";
 import HoverMenu from "@/components/ui/HoverMenu";
 
 import {
@@ -231,7 +232,9 @@ const DashboardPage = () => {
           </div>
           <ProgressTable />
         </div>
-        <div className="bg-white rounded-3xl p-3">p</div>
+        <div className="bg-white rounded-3xl p-3">
+          <SelectionTable/>
+          </div>
         <div className="bg-white rounded-3xl p-3">p</div>
       </section>
     </div>
