@@ -6,6 +6,7 @@ import ToggleButton from "@/components/ToggleButton";
 import ChackTable from "@/components/tables/ChackTable";
 import ProgressTable from "@/components/tables/ProgressTable";
 import SelectionTable from "@/components/tables/SelectionTable";
+import { CalenderComp } from "@/components/ui/Calender";
 import HoverMenu from "@/components/ui/HoverMenu";
 
 import {
@@ -15,7 +16,7 @@ import {
   InfoCircleOutlined,
   SearchOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb } from "antd";
+import { Breadcrumb, Card } from "antd";
 import { BarChart2, CircleCheckBig, Files } from "lucide-react";
 import Image from "next/image";
 
@@ -235,7 +236,16 @@ const DashboardPage = () => {
         <div className="bg-white rounded-3xl p-3">
           <SelectionTable/>
           </div>
-        <div className="bg-white rounded-3xl p-3">p</div>
+        <div className="bg-white rounded-3xl p-3">
+          <CalenderComp className="flex justify-center"/>
+        </div>
+      </section>
+      <section className="grid grid-cols-4 gap-5 mt-5">
+            <div className="bg-white col-span-2 rounded-3xl py-3">
+              gf
+            </div>
+            <div className="bg-white rounded-3xl p-3">hgf</div>
+            <div className="bg-white rounded-3xl p-3">fh</div>
       </section>
     </div>
   );
