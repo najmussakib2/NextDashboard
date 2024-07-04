@@ -33,7 +33,7 @@ const DashboardPage = () => {
         <h1 className="text-2xl font-bold text-[#2B3674]">Main Dashboard</h1>
         <div className="p-2 bg-white flex gap-3 items-center rounded-full">
           <div className="bg-[#F4F7FE] rounded-full w-44 flex justify-center items-center">
-            <SearchOutlined className="w-14 pl-3" />
+            <SearchOutlined className="pl-3" />
             <input
               type="text"
               className="bg-[#F4F7FE] py-1 overflow-hidden rounded-e-full"
